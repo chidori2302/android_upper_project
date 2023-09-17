@@ -25,13 +25,13 @@ router.post("/add", (request, response) => {
 
         result = result[0]["category"]
        
-        if(result == "mobile"){
+        if(result == "sneaker"){
             order_number = '55' + util.getRandomInt(100000, 999999)
-        }else if(result == "laptop"){
+        }else if(result == "oxford"){
             order_number = '66' + util.getRandomInt(100000, 999999)
-        }else if(result == "baby"){
+        }else if(result == "loafer"){
             order_number = '77' + util.getRandomInt(100000, 999999)
-        }else if(result == "toy"){
+        }else if(result == "boot"){
             order_number = '88' + util.getRandomInt(100000, 999999)
         }
 
@@ -72,14 +72,14 @@ router.get("/", (request, response) => {
 
         console.log(result)
        
-        if(result === "mobile"){
+        if(result === "sneaker"){
             console.log('hello')
             order_number = 55 + getRandomInt(100000, 999999)
-        }else if(result == "laptop"){
+        }else if(result == "oxford"){
             order_number = 66 + getRandomInt(100000, 999999)
-        }else if(result == "baby"){
+        }else if(result == "loafer"){
             order_number = 77 + getRandomInt(100000, 999999)
-        }else if(result == "toy"){
+        }else if(result == "boot"){
             order_number = 88 + getRandomInt(100000, 999999)
         }
 
