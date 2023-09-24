@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.bumptech.glide.Glide;
 import com.marwaeltayeb.das.R;
 import com.marwaeltayeb.das.adapter.ReviewAdapter;
+import com.marwaeltayeb.das.adapter.ColorAdapter;
 import com.marwaeltayeb.das.databinding.ActivityDetailsBinding;
 import com.marwaeltayeb.das.model.Cart;
 import com.marwaeltayeb.das.model.Product;
@@ -30,6 +31,7 @@ import com.marwaeltayeb.das.utils.RequestCallback;
 import com.marwaeltayeb.das.viewmodel.ReviewViewModel;
 import com.marwaeltayeb.das.viewmodel.ToCartViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener {
@@ -40,7 +42,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     private ReviewViewModel reviewViewModel;
     private ToCartViewModel toCartViewModel;
     private ReviewAdapter reviewAdapter;
+
+    private ColorAdapter colorAdapter;
     private List<Review> reviewList;
+    private List<String> listColor;
     private Product product;
 
     @Override
@@ -85,6 +90,17 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         binding.nameOfProduct.setText(product.getProductName());
         binding.priceOfProduct.setText(String.valueOf(product.getProductPrice()));
+        binding.colorTitle.setText("Chọn màu");
+        binding.sizeTitle.setText("Chọn cỡ");
+
+        listColor = new ArrayList<>();
+        listColor.add("000000");
+        listColor.add("854949");
+        listColor.add("456456");
+        colorAdapter = new ColorAdapter(this, listColor);
+        binding.colorList.setAdapter(colorAdapter);
+
+
 
         String imageUrl = LOCALHOST + product.getProductImage().replaceAll("\\\\", "/");
         Glide.with(this)
