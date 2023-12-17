@@ -2,6 +2,7 @@ package com.marwaeltayeb.das.adapter;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,7 +59,8 @@ public class ColorAdapter extends BaseAdapter {
         }
 
         String item = itemList.get(position);
-        holder.colorItem.setBackground(Drawable.createFromPath(item));
+        holder.colorItem.setBackgroundColor(Color.parseColor(item));
+
 
         holder.colorItem.setOnClickListener(new View.OnClickListener() {
             @Override

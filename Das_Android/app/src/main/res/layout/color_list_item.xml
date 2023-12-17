@@ -17,7 +17,7 @@
             android:id="@+id/color_item"
             android:layout_width="45dp"
             android:layout_height="35dp"
-            android:background="#000000" />
+            android:background="#854949" />
 
     </androidx.cardview.widget.CardView>
 </layout>

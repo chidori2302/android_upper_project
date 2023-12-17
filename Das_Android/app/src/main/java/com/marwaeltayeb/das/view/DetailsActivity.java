@@ -94,9 +94,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         binding.sizeTitle.setText("Chọn cỡ");
 
         listColor = new ArrayList<>();
-        listColor.add("000000");
-        listColor.add("854949");
-        listColor.add("456456");
+        listColor.add("#854949");
+        listColor.add("#000000");
+        listColor.add("#456456");
         colorAdapter = new ColorAdapter(this, listColor);
         binding.colorList.setAdapter(colorAdapter);
 
